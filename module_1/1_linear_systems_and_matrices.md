@@ -1,4 +1,4 @@
-###### System of linear equations
+##### System of linear equations
 A **linear equation** is an equation of the form $a_1 x_1 + a_2 x_2 + ... + a_n x_n = b$, where $b$ and the coefficients $a_1, ..., a_n$ are real or complex numbers. A **system of linear equations / linear system** is a collection of one or more linear equations.
 
 A **solution to a system** is an ordered sequence / n-tuple $(s_1, s_2, ..., s_n)$ of numbers turning each equation into equality upon setting $x_1 = s_1, x_2 = s_2, ..., x_n = s_n$. The set of all solutions of a linear system is called the **solution set**. A systems can be:
@@ -8,7 +8,7 @@ A **solution to a system** is an ordered sequence / n-tuple $(s_1, s_2, ..., s_n
 	4. **underdetermined** - has fewer equations than unknowns
 	4.Two systems are **equivalent** - they possess the same set of solutions
 
-###### Lines on the plane
+##### Lines on the plane
 $ax + by = c$ describes:
 	1. the line with **slope** $k = \frac{-a}{b}$ through $(0, \frac{c}{b})$ if $b \ne 0$
 	2. the line $x = \frac{c}{a}$ if $b = 0$
@@ -23,7 +23,7 @@ There are 3 possible situations, if the lines:
 	2. **parallel** - no solutions
 	3. **intersect** - one single solution
 
-###### Planes in the 3d-space
+##### Planes in the 3d-space
 $ax + by + cz =d$ describes a plane in $\mathbb{R}^3$ . It is **orthogonal to the gradient** $(a, b, c)$. Any vector in the plane is its direction vector.
 The solution set can be:
 	1. empty
@@ -31,12 +31,12 @@ The solution set can be:
 	3. a line
 	4. a plane
 
-###### Gaussian and Gauss–Jordan elimination
+##### Gaussian and Gauss–Jordan elimination
 Solution methods:
 1. **By substitution** - express one variable via other from one equation and then substitute that into another
 2. **By elimination** - combine two equations in order to eliminate the variable(s)
 
-###### Shorthand matrix notations for linear systems
+##### Shorthand matrix notations for linear systems
 A linear system is uniquely determined by coefficients $a_ij$ and $b_i$.
 $$
 \begin{equation}
@@ -74,7 +74,7 @@ a_{m1} & a_{m2} & ... & a_{mn} & b_m    \\
 \end{pmatrix}
 $$
 
-###### Matrices row properties
+##### Matrices row properties
 **Elementary row operations** that simplify linear systems:
 	1. Multiplication of a row by a nonzero constant
 	2. Addition of one row to another
@@ -115,7 +115,7 @@ The **free variables** are not determined by any other variables. E.g. for a sys
 * Homogeneous system always has a trivial solution $x = 0$
 * Homogeneous system has either one trivial solution, or infinitely many solutions
 
-###### Uniqueness in space
+##### Uniqueness in space
 3-d plane determination:
 	- The plane in $\mathbb{R}^3$ **is not** uniquely determined by a point and two vectors
 	- The plane in $\mathbb{R}^3$ **is not** uniquely determined by its three points

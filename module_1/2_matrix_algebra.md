@@ -81,6 +81,8 @@ v_2    \\
 v_n    \\
 \end{pmatrix} = u_1 v_1 + u_2 v_2 + ... + u_n v_n
 $$
+	row $\times$ column = number
+	column $\times$ row = matrix
 
 * **Matrix - vector multiplication:**
 	For matrix $A = (a_{ij})_{m \times n}$ and a column vector $x = (x_1 x_2 ... x_n)^\mathsf{T}$ the product $Ax$ can be defined in two ways:
@@ -176,7 +178,7 @@ $A$ - matrix $m \times n$, $B$ and $C$ are of sizes permitting the multiplicatio
 
 $A$, $B$, $C$ are $n \times n$ matrices:
 * $trace(cA) = c \cdot trace(A)$
-* $AB = AC$$\implies$ $B = C$
+* $AB = AC$$\implies$ $B = C$ if $A \ne 0$
 
 ##### Linear combination and independence
 $Ax$ is the **linear combination** *of columns* of $A$.
@@ -198,17 +200,22 @@ $Ax$ is the **linear combination** *of columns* of $A$.
 **Solutions to a non-homogeneous system $Ax = b$:**
   * If $U$ and $V$ are the solutions, then $U - V$ solves $Ax = 0$
   * If $U$ is a solution of $Ax = b$ and $AV = 0$, then $A(U + tV) = b$
+
   * For $Ax = b$ to be consistent, $b$ must be a *linear combination* of the columns of $A$
-  * $Ax = b$ consistent for all $b$ $\iff$ columns of $A$ span $\mathbb{R}^m$
-  * Unique solution $\iff$ columns of $A$ linearly independent
+  * $Ax = b$ consistent for all $b$ $\iff$ columns of $A$ span $\mathbb{R}^m$ (solution existence)
+  * Unique solution $\iff$ columns of $A$ linearly independent (solution uniqueness)
 
 
 ##### Invertible matrix
-A square $n \times n$ matrix $A$ is called **invertible** if there is a matrix $B$ such that $AB = BA = I_n$.
+A square $n \times n$ matrix $A$ is called **invertible** if there is a matrix $B$ such that $AB = I_n (= BA)$.
 Then $B$ is called the **inverse** of $A$ and denoted as $A^{-1}$.
 
 * **Right- and left- invertibility:**
   If $A$, $B$ and $C$ are square matrices, such that $BA = AC = I$, then, if $A$ is invertible: $B = C = A^{-1}$. The matrix is invertible, if it is left- *and* right- invertible. 
+
+  $AB = I$ - right-invertible $\implies$ solution existence
+  $CA = I$ - left-invertible $\implies$ solution uniqueness
+  For unique solution, matrix should be both left- and right- invertible
 
 * **Product invertibility:**
   If $A$ and $B$ are invertible, then so is $AB$ and $(AB)^{-1} = B^{-1} A^{-1}$
@@ -288,9 +295,9 @@ Let $A$ be an $m \times n$ coefficient matrix of a system $Ax = B$. The *element
 	  $$
 	  E = E^{-1} = \begin{pmatrix}
 	  1 & k \\
-	  & & 0 & 1 \\
+	  & 0 & 0 & 1 \\
 	  & \downarrow & 1 & \uparrow \\
-	  & 1 & 0  \\
+	  & 1 & 0 & 0 \\
 	  & & & l & 1
 	  \end{pmatrix}
 	  \begin{matrix}
@@ -305,6 +312,8 @@ Let $A$ be an $m \times n$ coefficient matrix of a system $Ax = B$. The *element
 ##### LU - factorization
 **$LU$ - factorization of $A$:**
   If $m \times n$ matrix $A$ can be reduced to a REF upper-triangular $m \times n$ matrix $U$ using only row multiplication and/or substitution operations, then $A = LU$, where $L$ is the lower-triangular $m \times m$ matrix - the product of the inverted elementary matrices.
+  
+  * $L$: lower-triangular, $U$: upper-triangular
   * $L$ is unique if all its diagonal entries are $1$
   * If row interchanges are needed, use $PA = LU$, where $P$ encodes all row interchanges
 

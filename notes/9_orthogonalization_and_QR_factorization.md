@@ -57,6 +57,38 @@ An $n \times n$ matrix $U$ is called **orthogonal** if $U^{-1} = U^\mathsf{T}$ (
 
 ![](img/img_7.png)
 
+** Properties of Q and R (general and for A with linearly independent columns)**
+	1. $Q$ is $m \times n$ matrix with *orthonormal columns* $(Q^\top Q=I)$;
+	2. If $A$ is square, then $Q$ is orthogonal $(Q^\top Q=QQ^\top = I)$
+	3. $R$ is $n \times n$ upper-triangular matrix with nonzero diagonal elements;
+	4. $A$ has linearly independent columns $\iff R$ is *non-singular*
+		$rank(A) = n \iff rank(QR) = n \le min\{rank(Q), rank(R)\}$
+		* For a non-singular $m \times m$ matrix $B$: $rank(BA) = rank(A)$  $(R(BA)=R(A))$
+	5. If $R$ has a positive diagonal entries, then $QR$ is unique
+
+** Applications of QR factorization**
+	1. Least squares;
+	2. Fitting values (predictions) $X\hat{\beta}=(QR)R^{-1}Q^\top y = QQ^\top y$
+	3. Standard errors of the LSE $(X^\top X)^{-1}=(R^\top Q^\top QR)^{-1}=(R^\top R)^{-1}$
+
+** Solution of the normal equation under QR factorization**
+	$\hat{x} = b_{proj} = (A^\top A)^{-1}A^\top b = [(QR)^\top (QR)]^{-1}(QR)^\top b = [R^\top Q^\top QR]^{-1}R^\top Q^\top b$
+	$=\mid QQ^\top=I \mid = (R^\top R)^{-1} R^\top Q^\top b = R^{-1} (R^\top)^{-1} R^\top Q^\top b = \mid (R^\top)^{-1} (R^\top) = I \mid$
+	$= R^{-1}Q^\top b$.
+
+##### Householder reflection
+** Construction of a Householder reflection with desired properties**
+	Householder transformation is a linear transformation that describes a reflection about a plane orthogonal to a unit normal vector $V$ containing the origin.
+	Householder matrix: $P=I-2vv^\top$.
+	
+** Idea behind the application of Householder reflection to QR factorization**
+	Householder reflections can be used to calculate QR decomposition by reflecting first one column of a matrix onto a multiple of a standard basis vector, calculating the transformation matrix, multiplying it with the original matrix and then recursing down the $( i , i )$ minor of that product.
+	
+** Explanation of the algorithm**
+	1. Suppose we are given a vector $x$ and we want to find a reflection that transforms $x$ into a direction parallel to some unit vector $y$.
+	2. The right reflection is through a plane that bisects the angle between $x$ and $y$.
+
+
 ##### Definition(s) of rank of matrix
 1. Rank is the number of pivot variables;
 2. Rank is the dimension of a vector space spanned by its rows/columns;

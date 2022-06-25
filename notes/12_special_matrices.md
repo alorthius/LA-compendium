@@ -24,8 +24,10 @@ Let $A$ be *Hermitian* matrix, then:
 * If $e^{tA}$ is orthogonal, then $A$ is anti-symmetric
 
 ##### Unitary matrices
-* A matrix $U$ with complex entries is **unitary** if $U^\dagger = U^{-1}$
-* $U^\dagger U = UU^\dagger = UU^{-1} = I$
+*Unitary matrix* is a complex square matrix with orthonormal columns and rows.
+* Matrix is unitary $\iff U^*=U^{-1}$
+* $U^* U=UU^*=UU^{-1}=I$;
+* The transformation described with a unitary matrix is an isomorphism between two Hilbert spaces
 
 * *Characterization of unitary matrices:*
 	For a square $U$:   $U$ is unitary $\iff U$ preserves norms:  $||U \vec{x}|| = ||\vec{x}||$
@@ -65,3 +67,8 @@ $U + W = \{ \vec{u} + \vec{w}\ |\ \vec{u} \in U, \vec{w} \in W \}$
 
 * $P$ is idempotent and symmetric: $nul(P) = nul(A^\mathsf{T}) = (col(A))^\perp$
 * For any $m \times n$ matrix $A$ with linearly independent columns the matrix $P := A(A^\mathsf{T}A)^{-1}A^\mathsf{T}$ is an orthogonal projection of $\mathbb{R}^m$ onto $col(A)$.
+
+##### Oblique projectors
+In both *oblique projection* and orthogonal projection, parallel lines of the source object produce parallel lines in the projected image. The projectors in oblique projection intersect the projection plane at an oblique *angle* to produce the projected image, as opposed to the perpendicular angle used in orthogonal projection.
+The result is that the projection *preserves* the lengths and angles for object faces parallel to the plane
+![](img/img_10.png)

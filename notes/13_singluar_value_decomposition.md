@@ -72,3 +72,8 @@ Every $m \times n$ matrix $A$ can be written as $A = U \Sigma V^\mathsf{T}$,
 * $\hat{x} = A^\dagger \vec{b}$ is the best solution of $A \vec{x} = \vec{b}$
 
 ![](img/img_9.png)
+
+** Solution of the normal equation under SVD factorization**
+	$\hat{x}=(A^\top A)^{-1}A^\top b = [(USV^\top)^\top (USV^\top)]^{-1}(USV^\top)^\top b = [VS^\top U^\top USV^\top]^{-1}VS^\top U^\top b=$$= \mid S^\top=S;\ U^\top U=I\mid = [VS^2V^\top]^{-1}VSU^\top b = (V^\top)^{-1} (S^2)^{-1} V^{-1}VSU^\top b=$
+	$= \mid (V^\top)^{-1}=V;\ V^{-1}V=I\mid = VS^{-1}S^{-1}SU^\top b = VS^{-1}U^\top b=$
+	$= \sum_{i=1}^{r}\sigma_i^{-1} v_i u_i^\top b = \sum_{i=1}^{r}c_i v_i$, where $c_i = \sigma_i^{-1}u_i^\top b$

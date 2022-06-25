@@ -29,3 +29,23 @@ $trace(P) = 1$
 * **projection matrix:**  $P = A \cdot (A^\mathsf{T} A)^{-1} A^\mathsf{T}$
 
 ![](img/img_5.png)
+
+
+##### Normal equation
+** Formulation of the problem**
+* We are solving the general least squares problem: given $m \times n$ matrix $A$ and $b \in \mathbb{R}^m$ with $m > n$ (the system $Ax=b$ is overdetermined), find such vector $x \in \mathbb{R}^n$, that $||Ax-b||^2$ is minimized. The problem is that $b$ is not in the column space of $A$ (its range), so we should project $b$ onto $A$'s range.
+	
+** Derivation of the normal equation**
+	1. $b = b_{proj} + (b-b_{proj})$ : 
+	2. $b_{proj}$ is the projection of $b$ onto $Col(A)$, and
+		* the other part (residual vector) is orthogonal to the column $Col(A) \implies$ is orthogonal to $Row(A^\top) \implies$ is in the nullspace $Null(A^\top)$;
+		* To get rid of the vector in the nullspace of $A^\top$, we just multiply both sides of the equation by $A^\top$:
+	3. $A^\top Ax = A^\top b$ - is a *normal equation*.
+		It always has a solution because $A^\top b \in Col(A^\top A)=Col(A^\top)$ , and $A^\top Ax \in Col(A^\top A)$
+	4. As long as columns of $A$ are linearly independent, $A^\top A$ is a square matrix and an invertible matrix, we can multiply each side by $A(A^\top A)^{-1}$:
+	5. $Ax=A(A^\top A)^{-1}A^\top b = b_{proj}$, and $A(A^\top A)^{-1}A^\top$ is the projection matrix.
+	
+** Solvability of normal equation**
+	* $A^\top Ax = A^\top b$ - is a *normal equation*.
+	1. It always has a solution because $A^\top b \in Col(A^\top A)=Col(A^\top)$ , and $A^\top Ax \in Col(A^\top A)$
+	2. If $rank(A)=n$ ($A$ has linearly independent columns), the normal equation has a unique solution. 

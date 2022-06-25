@@ -18,6 +18,21 @@ Let $A$ be Hermitian matrix, then:
 3. No generalized eigenvectors
 4. Diagonalizable
 
+	 **Proof**
+	1. All eigenvalues are *real*
+		* Let take a Hermitian matrix. Let $A$ be $n \times n$ Hermitian matrix and let $\lambda$ be its eigenvalue.
+		* We have $Ax=\lambda x$ for some $x \in \mathbb{C}^n-\{0\}$. 
+		* Take adjoint of both sides: $x^*A^*=\overline{\lambda}x^*$.
+		* Since $A^*=A:$
+			* $Ax=\lambda x$ multiply from the left by $x^* \implies x^*Ax=\lambda x^* x$
+			* $x^*A^*=\overline{\lambda}x^* = x^*A$ multiply by from the right by $x \implies x^*Ax = \overline{\lambda}x*x$ 
+		* Since $x\ne0$, so $\lambda = \overline{\lambda} \implies \lambda$ is real
+		
+	2. Eigenvectors corresponding to distinct eigenvalues are *orthogonal*;
+		* Let take a Hermitian matrix. Let $A$ be $n \times n$ Hermitian matrix. Let $(\lambda_1, u_1)$ and $(\lambda_2, u_2)$ be two pairs of eigenvalues and corresponding eigenvector, and $\lambda_1 \ne \lambda_2$
+		* The eigenvalues are real. Since $Au_1=\lambda_1u_1$, we can multiply it by $u_2^*$ from the left: $u_2^*Au_1=\lambda_1 u_2^*u_1 \implies (Au_2)^*u_1=\lambda_1 u_2^* u_1 = (\lambda_2 u_2)^*u_1=\lambda_1 u_2^* u_1 \implies$ $\lambda_2 u_2^* u_1^* = \lambda_1 u_2^* u_1$
+		* $\lambda_1 \ne \lambda_2 \implies u_2^*u_1 = 0$, so these eigenvectors are orthogonal
+		
 
 ##### Quadratic forms
 A **quadratic form** $Q$ is a function $Q : \mathbb{R}^n \mapsto \mathbb{R} : Q(\vec{x}) = Q(x_1, x_2, \dots, x_n) = \sum a_{ij} x_i x_j$
@@ -45,7 +60,7 @@ Let $A$ be a symmetric matrix. The following are equivalent:
 
 *The standard form of Cholesky decomposition:*  $A = LL^\mathsf{T}$
 
-* If there is Cholesky decomposition of $A$ then $A$ is semi-definite
+* If there is standard Cholesky decomposition of $A$ then $A$ is positive semi-definite
 * If $A$ is positive semi-definite, then $LL^\mathsf{T}$ exists and is unique
 * Positive definite matrix decomposition:
 	If $L$ has diagonal $S$, then with $L := L_1 S$ and $D := S^2$:  $A = L_1 D L_1^\mathsf{T}$

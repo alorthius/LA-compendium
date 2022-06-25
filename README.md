@@ -9,4 +9,4 @@ My repository with all the materials I used and created during the learning Line
 * Presentations slides of the lectures
 * Self-tests and quizes passed
 * Collaborative labs
-* Collaborative final project
+* Collaborative [final project](https://github.com/MykhailoSobko/3d_graphics_rendering)
